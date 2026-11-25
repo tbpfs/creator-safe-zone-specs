@@ -1,107 +1,834 @@
 {
-  "schema_version": "2026.11",
-  "spec_type": "public-creator-platform-asset-specs",
+  "schema_version": "2026.11.2",
+  "spec_type": "creator-platform-safe-zone-and-asset-specs",
+  "sync_source": "Auto-exported from SpecFrame Studio production tools_specs.json (Single Source of Truth)",
+  "spec_sha256_16": "c0120ee3c5dd73c6",
   "online_workbench": "https://frame.ai-purplemaple.com/",
-  "safe_zone_canvases": [
+  "safe_zone_platforms": [
     {
-      "id": "tiktok_9_16",
-      "platform": "TikTok (Organic & Ad)",
-      "width": 1080,
-      "height": 1920,
-      "aspect": "9:16",
-      "safe_box_norm": { "x": 0.056, "y": 0.078, "w": 0.778, "h": 0.672 },
+      "id": "tiktok-safe-zone",
+      "code": "SF-01",
+      "name": "TikTok Safe Zone Checker & Template",
+      "canvas": {
+        "width": 1080,
+        "height": 1920,
+        "aspect_label": "9:16"
+      },
+      "modes": [
+        {
+          "id": "organic",
+          "label": "Organic Post",
+          "zones": [
+            {
+              "shape": "rect",
+              "kind": "danger",
+              "label": "Top Tabs & Search",
+              "x": 0.0,
+              "y": 0.0,
+              "w": 1.0,
+              "h": 0.078
+            },
+            {
+              "shape": "rect",
+              "kind": "danger",
+              "label": "Right Action Rail",
+              "x": 0.85,
+              "y": 0.42,
+              "w": 0.15,
+              "h": 0.36
+            },
+            {
+              "shape": "rect",
+              "kind": "danger",
+              "label": "Caption, Sound & Nav",
+              "x": 0.0,
+              "y": 0.78,
+              "w": 1.0,
+              "h": 0.22
+            },
+            {
+              "shape": "rect",
+              "kind": "safe",
+              "label": "Safe Content Frame",
+              "x": 0.04,
+              "y": 0.09,
+              "w": 0.79,
+              "h": 0.67
+            }
+          ]
+        },
+        {
+          "id": "paid_ad",
+          "label": "Paid Ad (In-Feed)",
+          "zones": [
+            {
+              "shape": "rect",
+              "kind": "danger",
+              "label": "Top Status & Ad Label",
+              "x": 0.0,
+              "y": 0.0,
+              "w": 1.0,
+              "h": 0.085
+            },
+            {
+              "shape": "rect",
+              "kind": "danger",
+              "label": "Right Engagement Icons",
+              "x": 0.84,
+              "y": 0.38,
+              "w": 0.16,
+              "h": 0.35
+            },
+            {
+              "shape": "rect",
+              "kind": "danger",
+              "label": "Sponsored CTA Button & Copy",
+              "x": 0.0,
+              "y": 0.71,
+              "w": 1.0,
+              "h": 0.29
+            },
+            {
+              "shape": "rect",
+              "kind": "safe",
+              "label": "Ad Safe Frame",
+              "x": 0.04,
+              "y": 0.1,
+              "w": 0.78,
+              "h": 0.59
+            }
+          ]
+        }
+      ],
       "tool_url": "https://frame.ai-purplemaple.com/tools/tiktok-safe-zone/"
     },
     {
-      "id": "youtube_shorts_9_16",
-      "platform": "YouTube Shorts",
-      "width": 1080,
-      "height": 1920,
-      "aspect": "9:16",
-      "safe_box_norm": { "x": 0.056, "y": 0.078, "w": 0.796, "h": 0.692 },
+      "id": "youtube-shorts-safe-zone",
+      "code": "SF-02",
+      "name": "YouTube Shorts Safe Zone Checker",
+      "canvas": {
+        "width": 1080,
+        "height": 1920,
+        "aspect_label": "9:16"
+      },
+      "modes": [
+        {
+          "id": "organic",
+          "label": "Organic Shorts",
+          "zones": [
+            {
+              "shape": "rect",
+              "kind": "danger",
+              "label": "Top Controls & Search",
+              "x": 0.0,
+              "y": 0.0,
+              "w": 1.0,
+              "h": 0.09
+            },
+            {
+              "shape": "rect",
+              "kind": "danger",
+              "label": "Like, Comment, Remix Rail",
+              "x": 0.83,
+              "y": 0.44,
+              "w": 0.17,
+              "h": 0.36
+            },
+            {
+              "shape": "rect",
+              "kind": "danger",
+              "label": "Channel, Subscribe & Title",
+              "x": 0.0,
+              "y": 0.77,
+              "w": 1.0,
+              "h": 0.23
+            },
+            {
+              "shape": "rect",
+              "kind": "safe",
+              "label": "Shorts Safe Frame",
+              "x": 0.045,
+              "y": 0.105,
+              "w": 0.77,
+              "h": 0.65
+            }
+          ]
+        },
+        {
+          "id": "paid_ad",
+          "label": "Shorts Ad (CTA)",
+          "zones": [
+            {
+              "shape": "rect",
+              "kind": "danger",
+              "label": "Top Bar & Sponsored Badge",
+              "x": 0.0,
+              "y": 0.0,
+              "w": 1.0,
+              "h": 0.1
+            },
+            {
+              "shape": "rect",
+              "kind": "danger",
+              "label": "Right Action Column",
+              "x": 0.82,
+              "y": 0.4,
+              "w": 0.18,
+              "h": 0.35
+            },
+            {
+              "shape": "rect",
+              "kind": "danger",
+              "label": "Ad Action Card & Scrubber",
+              "x": 0.0,
+              "y": 0.7,
+              "w": 1.0,
+              "h": 0.3
+            },
+            {
+              "shape": "rect",
+              "kind": "safe",
+              "label": "Shorts Ad Safe Frame",
+              "x": 0.045,
+              "y": 0.115,
+              "w": 0.76,
+              "h": 0.57
+            }
+          ]
+        }
+      ],
       "tool_url": "https://frame.ai-purplemaple.com/tools/youtube-shorts-safe-zone/"
     },
     {
-      "id": "instagram_reels_9_16",
-      "platform": "Instagram Reels & Meta Ads",
-      "width": 1080,
-      "height": 1920,
-      "aspect": "9:16",
-      "safe_box_norm": { "x": 0.056, "y": 0.14, "w": 0.788, "h": 0.66 },
+      "id": "instagram-reels-safe-zone",
+      "code": "SF-03",
+      "name": "Instagram Reels & Meta Ad Safe Zone Checker",
+      "canvas": {
+        "width": 1080,
+        "height": 1920,
+        "aspect_label": "9:16"
+      },
+      "modes": [
+        {
+          "id": "organic",
+          "label": "Reels + Profile Grid",
+          "zones": [
+            {
+              "shape": "rect",
+              "kind": "danger",
+              "label": "Top Camera & Reels Title",
+              "x": 0.0,
+              "y": 0.0,
+              "w": 1.0,
+              "h": 0.115
+            },
+            {
+              "shape": "rect",
+              "kind": "danger",
+              "label": "Right Like/Share Icons",
+              "x": 0.84,
+              "y": 0.47,
+              "w": 0.16,
+              "h": 0.32
+            },
+            {
+              "shape": "rect",
+              "kind": "danger",
+              "label": "Handle, Caption & Audio",
+              "x": 0.0,
+              "y": 0.79,
+              "w": 1.0,
+              "h": 0.21
+            },
+            {
+              "shape": "rect",
+              "kind": "caution",
+              "label": "3:4 Profile Grid Cover Crop (1080×1440)",
+              "x": 0.0,
+              "y": 0.125,
+              "w": 1.0,
+              "h": 0.75
+            },
+            {
+              "shape": "rect",
+              "kind": "safe",
+              "label": "Reels + Grid Safe Area",
+              "x": 0.05,
+              "y": 0.16,
+              "w": 0.78,
+              "h": 0.61
+            }
+          ]
+        },
+        {
+          "id": "paid_ad",
+          "label": "Meta Paid Ad (IG/FB)",
+          "zones": [
+            {
+              "shape": "rect",
+              "kind": "danger",
+              "label": "Meta Top 14% Sponsored Header",
+              "x": 0.0,
+              "y": 0.0,
+              "w": 1.0,
+              "h": 0.14
+            },
+            {
+              "shape": "rect",
+              "kind": "danger",
+              "label": "Meta Bottom 35% CTA & Copy",
+              "x": 0.0,
+              "y": 0.65,
+              "w": 1.0,
+              "h": 0.35
+            },
+            {
+              "shape": "rect",
+              "kind": "safe",
+              "label": "Meta Official 9:16 Safe Zone",
+              "x": 0.06,
+              "y": 0.14,
+              "w": 0.88,
+              "h": 0.51
+            }
+          ]
+        }
+      ],
       "tool_url": "https://frame.ai-purplemaple.com/tools/instagram-reels-safe-zone/"
     },
     {
-      "id": "youtube_banner_16_9",
-      "platform": "YouTube Channel Banner",
-      "width": 2560,
-      "height": 1440,
-      "aspect": "16:9",
-      "safe_box_norm": { "x": 0.198, "y": 0.353, "w": 0.604, "h": 0.294 },
+      "id": "youtube-banner-safe-area",
+      "code": "SF-04",
+      "name": "YouTube Banner Safe Area Preview & Cropper",
+      "canvas": {
+        "width": 2560,
+        "height": 1440,
+        "aspect_label": "16:9"
+      },
+      "modes": [
+        {
+          "id": "all_devices",
+          "label": "TV / Desktop / Mobile",
+          "zones": [
+            {
+              "shape": "rect",
+              "kind": "danger",
+              "label": "TV Only (Top)",
+              "x": 0.0,
+              "y": 0.0,
+              "w": 1.0,
+              "h": 0.353
+            },
+            {
+              "shape": "rect",
+              "kind": "danger",
+              "label": "TV Only (Bottom)",
+              "x": 0.0,
+              "y": 0.647,
+              "w": 1.0,
+              "h": 0.353
+            },
+            {
+              "shape": "rect",
+              "kind": "caution",
+              "label": "Desktop Max (2560×423)",
+              "x": 0.0,
+              "y": 0.353,
+              "w": 1.0,
+              "h": 0.294
+            },
+            {
+              "shape": "rect",
+              "kind": "safe",
+              "label": "All-Device Safe Area (1546×423)",
+              "x": 0.198,
+              "y": 0.353,
+              "w": 0.604,
+              "h": 0.294
+            }
+          ]
+        }
+      ],
       "tool_url": "https://frame.ai-purplemaple.com/tools/youtube-banner-safe-area/"
     },
     {
-      "id": "x_header_3_1",
-      "platform": "X (Twitter) Profile Header",
-      "width": 1500,
-      "height": 500,
-      "aspect": "3:1",
-      "safe_box_norm": { "x": 0.18, "y": 0.12, "w": 0.78, "h": 0.76 },
+      "id": "x-header-safe-zone",
+      "code": "SF-09",
+      "name": "X (Twitter) Header Safe Zone Checker",
+      "canvas": {
+        "width": 1500,
+        "height": 500,
+        "aspect_label": "3:1"
+      },
+      "modes": [
+        {
+          "id": "desktop_mobile",
+          "label": "Desktop + Mobile",
+          "zones": [
+            {
+              "shape": "rect",
+              "kind": "caution",
+              "label": "Mobile Top Trim (60 px)",
+              "x": 0.0,
+              "y": 0.0,
+              "w": 1.0,
+              "h": 0.12
+            },
+            {
+              "shape": "rect",
+              "kind": "caution",
+              "label": "Mobile Bottom Trim (60 px)",
+              "x": 0.0,
+              "y": 0.88,
+              "w": 1.0,
+              "h": 0.12
+            },
+            {
+              "shape": "circle",
+              "kind": "danger",
+              "label": "Profile Avatar Overlap",
+              "x": 0.13,
+              "y": 0.96,
+              "w": 0.23,
+              "h": 0.69
+            },
+            {
+              "shape": "rect",
+              "kind": "safe",
+              "label": "X Header Safe Area",
+              "x": 0.26,
+              "y": 0.14,
+              "w": 0.71,
+              "h": 0.72
+            }
+          ]
+        }
+      ],
       "tool_url": "https://frame.ai-purplemaple.com/tools/x-header-safe-zone/"
     },
     {
-      "id": "youtube_thumbnail_16_9",
-      "platform": "YouTube Video Thumbnail",
-      "width": 1280,
-      "height": 720,
-      "aspect": "16:9",
-      "timestamp_danger_box_norm": { "x": 0.765, "y": 0.785, "w": 0.22, "h": 0.19 },
+      "id": "youtube-thumbnail-tester",
+      "code": "SF-18",
+      "name": "YouTube Thumbnail Preview & A/B Tester",
+      "canvas": {
+        "width": 1280,
+        "height": 720,
+        "aspect_label": "16:9"
+      },
+      "modes": [
+        {
+          "id": "feed_card",
+          "label": "YouTube Feed Card",
+          "zones": [
+            {
+              "shape": "rect",
+              "kind": "danger",
+              "label": "Bottom-Right Duration Pill (~16%×14%)",
+              "x": 0.82,
+              "y": 0.83,
+              "w": 0.16,
+              "h": 0.14
+            }
+          ]
+        }
+      ],
+      "min_width_px": 640,
+      "max_bytes": 2097152,
       "tool_url": "https://frame.ai-purplemaple.com/tools/youtube-thumbnail-tester/"
     }
   ],
-  "asset_pack_specs": [
+  "asset_packs": [
     {
-      "id": "line_creators_stickers",
-      "platform": "LINE Creators Market Stickers",
-      "require_even_dimensions": true,
-      "sticker_max_width": 370,
-      "sticker_max_height": 320,
-      "sticker_margin_px": 10,
-      "main_icon": { "width": 240, "height": 240, "margin_px": 0 },
-      "tab_icon": { "width": 96, "height": 74, "margin_px": 0 },
-      "max_size_kb": 1024,
-      "tool_url": "https://frame.ai-purplemaple.com/tools/line-sticker-resizer/"
+      "id": "twitch-emote-resizer",
+      "code": "SF-05",
+      "name": "Twitch Emote & Sub Badge Resizer",
+      "supports_logo_overlay": false,
+      "outputs": [
+        {
+          "id": "twitch_112",
+          "label": "twitch_112",
+          "width": 112,
+          "height": 112,
+          "fit": "contain",
+          "padding_px": 0,
+          "even_dimensions": true,
+          "max_bytes": 1048576,
+          "allow_logo_overlay": false,
+          "filename_template": "twitch_emote_112x112.png",
+          "role": "item"
+        },
+        {
+          "id": "twitch_56",
+          "label": "twitch_56",
+          "width": 56,
+          "height": 56,
+          "fit": "contain",
+          "padding_px": 0,
+          "even_dimensions": true,
+          "max_bytes": 1048576,
+          "allow_logo_overlay": false,
+          "filename_template": "twitch_emote_56x56.png",
+          "role": "item"
+        },
+        {
+          "id": "twitch_28",
+          "label": "twitch_28",
+          "width": 28,
+          "height": 28,
+          "fit": "contain",
+          "padding_px": 0,
+          "even_dimensions": true,
+          "max_bytes": 1048576,
+          "allow_logo_overlay": false,
+          "filename_template": "twitch_emote_28x28.png",
+          "role": "item"
+        },
+        {
+          "id": "twitch_badge_72",
+          "label": "twitch_badge_72",
+          "width": 72,
+          "height": 72,
+          "fit": "contain",
+          "padding_px": 0,
+          "even_dimensions": true,
+          "max_bytes": 25600,
+          "allow_logo_overlay": false,
+          "filename_template": "twitch_badge_72x72.png",
+          "role": "item"
+        },
+        {
+          "id": "twitch_badge_36",
+          "label": "twitch_badge_36",
+          "width": 36,
+          "height": 36,
+          "fit": "contain",
+          "padding_px": 0,
+          "even_dimensions": true,
+          "max_bytes": 25600,
+          "allow_logo_overlay": false,
+          "filename_template": "twitch_badge_36x36.png",
+          "role": "item"
+        },
+        {
+          "id": "twitch_badge_18",
+          "label": "twitch_badge_18",
+          "width": 18,
+          "height": 18,
+          "fit": "contain",
+          "padding_px": 0,
+          "even_dimensions": true,
+          "max_bytes": 25600,
+          "allow_logo_overlay": false,
+          "filename_template": "twitch_badge_18x18.png",
+          "role": "item"
+        }
+      ],
+      "tool_url": "https://frame.ai-purplemaple.com/tools/twitch-emote-resizer/"
     },
     {
-      "id": "steam_store_capsules",
-      "platform": "Steam Store & Library Capsules",
+      "id": "discord-emoji-resizer",
+      "code": "SF-06",
+      "name": "Discord Emoji & Sticker Resizer",
+      "supports_logo_overlay": false,
       "outputs": [
-        { "id": "header_capsule", "width": 920, "height": 430, "allow_logo_overlay": true },
-        { "id": "small_capsule", "width": 462, "height": 174, "allow_logo_overlay": true },
-        { "id": "main_capsule", "width": 1232, "height": 706, "allow_logo_overlay": true },
-        { "id": "vertical_capsule", "width": 748, "height": 896, "allow_logo_overlay": true },
-        { "id": "library_capsule", "width": 600, "height": 900, "allow_logo_overlay": true },
-        { "id": "library_hero", "width": 3840, "height": 1240, "allow_logo_overlay": false }
+        {
+          "id": "discord_emoji_128",
+          "label": "discord_emoji_128",
+          "width": 128,
+          "height": 128,
+          "fit": "contain",
+          "padding_px": 0,
+          "even_dimensions": true,
+          "max_bytes": 262144,
+          "allow_logo_overlay": false,
+          "filename_template": "discord_emoji_128x128.png",
+          "role": "item"
+        },
+        {
+          "id": "discord_sticker_320",
+          "label": "discord_sticker_320",
+          "width": 320,
+          "height": 320,
+          "fit": "contain",
+          "padding_px": 0,
+          "even_dimensions": true,
+          "max_bytes": 524288,
+          "allow_logo_overlay": false,
+          "filename_template": "discord_sticker_320x320.png",
+          "role": "item"
+        },
+        {
+          "id": "discord_icon_512",
+          "label": "discord_icon_512",
+          "width": 512,
+          "height": 512,
+          "fit": "cover",
+          "padding_px": 0,
+          "even_dimensions": true,
+          "max_bytes": 1048576,
+          "allow_logo_overlay": false,
+          "filename_template": "discord_server_icon_512x512.png",
+          "role": "item"
+        }
+      ],
+      "tool_url": "https://frame.ai-purplemaple.com/tools/discord-emoji-resizer/"
+    },
+    {
+      "id": "steam-capsule-resizer",
+      "code": "SF-07",
+      "name": "Steam Capsule & Library Asset Resizer",
+      "supports_logo_overlay": true,
+      "outputs": [
+        {
+          "id": "steam_header",
+          "label": "steam_header",
+          "width": 920,
+          "height": 430,
+          "fit": "cover",
+          "padding_px": 0,
+          "even_dimensions": true,
+          "max_bytes": null,
+          "allow_logo_overlay": true,
+          "filename_template": "steam_header_capsule_920x430.png",
+          "role": "item"
+        },
+        {
+          "id": "steam_small",
+          "label": "steam_small",
+          "width": 462,
+          "height": 174,
+          "fit": "cover",
+          "padding_px": 0,
+          "even_dimensions": true,
+          "max_bytes": null,
+          "allow_logo_overlay": true,
+          "filename_template": "steam_small_capsule_462x174.png",
+          "role": "item"
+        },
+        {
+          "id": "steam_main",
+          "label": "steam_main",
+          "width": 1232,
+          "height": 706,
+          "fit": "cover",
+          "padding_px": 0,
+          "even_dimensions": true,
+          "max_bytes": null,
+          "allow_logo_overlay": true,
+          "filename_template": "steam_main_capsule_1232x706.png",
+          "role": "item"
+        },
+        {
+          "id": "steam_vertical",
+          "label": "steam_vertical",
+          "width": 748,
+          "height": 896,
+          "fit": "cover",
+          "padding_px": 0,
+          "even_dimensions": true,
+          "max_bytes": null,
+          "allow_logo_overlay": true,
+          "filename_template": "steam_vertical_capsule_748x896.png",
+          "role": "item"
+        },
+        {
+          "id": "steam_library_capsule",
+          "label": "steam_library_capsule",
+          "width": 600,
+          "height": 900,
+          "fit": "cover",
+          "padding_px": 0,
+          "even_dimensions": true,
+          "max_bytes": null,
+          "allow_logo_overlay": true,
+          "filename_template": "steam_library_capsule_600x900.png",
+          "role": "item"
+        },
+        {
+          "id": "steam_library_hero",
+          "label": "steam_library_hero",
+          "width": 3840,
+          "height": 1240,
+          "fit": "cover",
+          "padding_px": 0,
+          "even_dimensions": true,
+          "max_bytes": null,
+          "allow_logo_overlay": false,
+          "filename_template": "steam_library_hero_3840x1240_NO_TEXT.png",
+          "role": "item"
+        }
       ],
       "tool_url": "https://frame.ai-purplemaple.com/tools/steam-capsule-resizer/"
     },
     {
-      "id": "chrome_web_store",
-      "platform": "Chrome Web Store Promotional Assets",
+      "id": "line-sticker-resizer",
+      "code": "SF-08",
+      "name": "LINE Sticker Batch Resizer & ZIP Packager",
+      "supports_logo_overlay": false,
       "outputs": [
-        { "id": "store_icon", "width": 128, "height": 128, "margin_px": 16 },
-        { "id": "small_promo", "width": 440, "height": 280, "margin_px": 0 },
-        { "id": "marquee_promo", "width": 1400, "height": 560, "margin_px": 0 },
-        { "id": "screenshot_hd", "width": 1280, "height": 800, "margin_px": 0 }
+        {
+          "id": "line_sticker_item",
+          "label": "line_sticker_item",
+          "width": 370,
+          "height": 320,
+          "fit": "contain",
+          "padding_px": 10,
+          "even_dimensions": true,
+          "max_bytes": 1048576,
+          "allow_logo_overlay": false,
+          "filename_template": "{index}.png",
+          "role": "item"
+        },
+        {
+          "id": "line_main",
+          "label": "line_main",
+          "width": 240,
+          "height": 240,
+          "fit": "contain",
+          "padding_px": 0,
+          "even_dimensions": true,
+          "max_bytes": 1048576,
+          "allow_logo_overlay": false,
+          "filename_template": "main.png",
+          "role": "single_primary"
+        },
+        {
+          "id": "line_tab",
+          "label": "line_tab",
+          "width": 96,
+          "height": 74,
+          "fit": "contain",
+          "padding_px": 0,
+          "even_dimensions": true,
+          "max_bytes": 1048576,
+          "allow_logo_overlay": false,
+          "filename_template": "tab.png",
+          "role": "single_primary"
+        }
       ],
-      "tool_url": "https://frame.ai-purplemaple.com/tools/chrome-web-store-resizer/"
+      "tool_url": "https://frame.ai-purplemaple.com/tools/line-sticker-resizer/"
     },
     {
-      "id": "twitch_discord_emotes",
-      "platform": "Twitch & Discord Emotes / Emoji",
-      "twitch_sizes_px": [28, 56, 112],
-      "discord_emoji_px": 128,
-      "discord_max_kb": 256,
-      "tool_url": "https://frame.ai-purplemaple.com/tools/twitch-emote-resizer/"
+      "id": "pixiv-booth-cover-resizer",
+      "code": "SF-10",
+      "name": "pixiv, BOOTH & FANBOX Cover Resizer",
+      "supports_logo_overlay": false,
+      "outputs": [
+        {
+          "id": "booth_square_1000",
+          "label": "booth_square_1000",
+          "width": 1000,
+          "height": 1000,
+          "fit": "cover",
+          "padding_px": 0,
+          "even_dimensions": true,
+          "max_bytes": null,
+          "allow_logo_overlay": false,
+          "filename_template": "booth_item_square_1000x1000.png",
+          "role": "item"
+        },
+        {
+          "id": "pixiv_novel_600x800",
+          "label": "pixiv_novel_600x800",
+          "width": 600,
+          "height": 800,
+          "fit": "cover",
+          "padding_px": 0,
+          "even_dimensions": true,
+          "max_bytes": null,
+          "allow_logo_overlay": false,
+          "filename_template": "pixiv_novel_cover_600x800.png",
+          "role": "item"
+        },
+        {
+          "id": "fanbox_cover_1200x630",
+          "label": "fanbox_cover_1200x630",
+          "width": 1200,
+          "height": 630,
+          "fit": "cover",
+          "padding_px": 0,
+          "even_dimensions": true,
+          "max_bytes": null,
+          "allow_logo_overlay": false,
+          "filename_template": "fanbox_ogp_cover_1200x630.png",
+          "role": "item"
+        },
+        {
+          "id": "booth_shop_header_1600x400",
+          "label": "booth_shop_header_1600x400",
+          "width": 1600,
+          "height": 400,
+          "fit": "cover",
+          "padding_px": 0,
+          "even_dimensions": true,
+          "max_bytes": null,
+          "allow_logo_overlay": false,
+          "filename_template": "booth_shop_header_1600x400.png",
+          "role": "item"
+        }
+      ],
+      "tool_url": "https://frame.ai-purplemaple.com/tools/pixiv-booth-cover-resizer/"
+    },
+    {
+      "id": "chrome-web-store-resizer",
+      "code": "SF-11",
+      "name": "Chrome Web Store Promo & Screenshot Resizer",
+      "supports_logo_overlay": false,
+      "outputs": [
+        {
+          "id": "cws_screenshot_1280",
+          "label": "cws_screenshot_1280",
+          "width": 1280,
+          "height": 800,
+          "fit": "cover",
+          "padding_px": 0,
+          "even_dimensions": true,
+          "max_bytes": null,
+          "allow_logo_overlay": false,
+          "filename_template": "cws_screenshot_1280x800.png",
+          "role": "item"
+        },
+        {
+          "id": "cws_small_promo_440",
+          "label": "cws_small_promo_440",
+          "width": 440,
+          "height": 280,
+          "fit": "cover",
+          "padding_px": 0,
+          "even_dimensions": true,
+          "max_bytes": null,
+          "allow_logo_overlay": false,
+          "filename_template": "cws_small_promo_440x280.png",
+          "role": "item"
+        },
+        {
+          "id": "cws_marquee_1400",
+          "label": "cws_marquee_1400",
+          "width": 1400,
+          "height": 560,
+          "fit": "cover",
+          "padding_px": 0,
+          "even_dimensions": true,
+          "max_bytes": null,
+          "allow_logo_overlay": false,
+          "filename_template": "cws_marquee_promo_1400x560.png",
+          "role": "item"
+        },
+        {
+          "id": "cws_icon_128",
+          "label": "cws_icon_128",
+          "width": 128,
+          "height": 128,
+          "fit": "contain",
+          "padding_px": 16,
+          "even_dimensions": true,
+          "max_bytes": null,
+          "allow_logo_overlay": false,
+          "filename_template": "cws_store_icon_128x128.png",
+          "role": "item"
+        }
+      ],
+      "tool_url": "https://frame.ai-purplemaple.com/tools/chrome-web-store-resizer/"
     }
   ]
 }

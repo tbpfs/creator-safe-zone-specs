@@ -1,0 +1,40 @@
+{
+  "name": "specframe-check",
+  "version": "1.0.0",
+  "description": "Zero-dependency CLI & machine-readable specs to validate Steam capsules, LINE stickers (10px margin + even pixels), Chrome Web Store tiles, Discord/Twitch emotes, and short-video safe zones.",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "specframe-check": "./bin/specframe-check.mjs"
+  },
+  "files": [
+    "bin/",
+    "lib/",
+    "specs/",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "test": "node --test tests/test_cli.mjs"
+  },
+  "keywords": [
+    "steam-capsule",
+    "line-sticker",
+    "chrome-web-store",
+    "safe-zone",
+    "tiktok",
+    "youtube-shorts",
+    "instagram-reels",
+    "gamedev",
+    "asset-validator",
+    "cli"
+  ],
+  "homepage": "https://frame.ai-purplemaple.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tbpfs/creator-safe-zone-specs.git"
+  }
+}

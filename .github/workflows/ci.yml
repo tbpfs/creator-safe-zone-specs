@@ -1,4 +1,4 @@
-name: Verify Creator Safe Zone & Asset Specs
+name: Verify Creator Safe Zone Specs & CLI
 
 on:
   push:
@@ -28,5 +28,13 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Validate platform safe-zone & asset spec invariants
+      - name: Setup Node.js 20
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: "20"
+
+      - name: Validate platform safe-zone & asset spec invariants (Python)
         run: python3 -W error -m unittest discover -s tests -v
+
+      - name: Run specframe-check CLI & binary PNG margin tests (Node.js)
+        run: node --test tests/test_cli.mjs

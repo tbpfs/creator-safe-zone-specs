@@ -1,25 +1,46 @@
-# Creator Safe Zone & Platform Asset Specs (2026)
+# specframe-check — Creator Asset & Safe-Zone CLI + Open Specs (2026)
 
-Machine-readable JSON specifications and automated coordinate invariant tests for short-video UI safe zones and creator marketplace image guidelines—backing **[SpecFrame Studio (`frame.ai-purplemaple.com`)](https://frame.ai-purplemaple.com/)**.
+Zero-dependency Node.js CLI and machine-readable JSON specifications to validate creator & indie-game store assets locally or in CI before upload—catching common rejection traps automatically:
 
-> **Open-Spec Transparency**  
-> Platform UI overlays and submission guidelines change frequently. This repository publishes the exact normalized coordinates, padding rules (e.g., LINE 10px margin + even-pixel rule, Steam Library Hero zero-logo rule, Chrome Web Store 16px icon margin), and verification tests so designers and developers can audit or contribute updates openly.
+- **Steamworks 6-in-1 Capsules (`steam`)**: Verifies all 6 store/library dimensions (`920×430`, `462×174`, `1232×706`, `748×896`, `600×900`, `3840×1240`), flags missing assets in a folder, and reminds you that `Library Hero (3840×1240)` forbids baked-in logos/text.
+- **LINE Creators Market Stickers (`line`)**: Enforces `<=370×320`, **even width & height**, PNG alpha channel, `<=1 MB`, and decodes actual RGBA scanlines to check the **10px transparent border margin** on all 4 edges.
+- **Chrome Web Store Assets (`chrome-store`)**: Checks promo tiles (`1280×800`, `440×280`, `1400×560`) and verifies the official **16px transparent margin** on the `128×128` store icon.
+- **Discord, Twitch, pixiv/BOOTH & Short-Video Safe Zones**: Validates `discord`, `twitch`, `pixiv-booth`, `youtube-thumb`, `tiktok`, `shorts`, `reels`, `youtube-banner`, and `x-header`.
 
-## Free Browser-Local Workbench (18 Tools · 0 Bytes Uploaded)
+Specs are auto-exported from the single source of truth backing the browser-local workbench at [SpecFrame Studio](https://frame.ai-purplemaple.com/).
 
-| Category | English | 日本語 | 繁體中文 |
-| :--- | :--- | :--- | :--- |
-| **All 18 Tools Index** | [frame.ai-purplemaple.com](https://frame.ai-purplemaple.com/) | [日本語トップ](https://frame.ai-purplemaple.com/ja/) | [繁中總覽](https://frame.ai-purplemaple.com/zh-tw/) |
-| **Short-Video Safe Zones** | [TikTok](https://frame.ai-purplemaple.com/tools/tiktok-safe-zone/) · [Shorts](https://frame.ai-purplemaple.com/tools/youtube-shorts-safe-zone/) · [Reels](https://frame.ai-purplemaple.com/tools/instagram-reels-safe-zone/) | [TikTok](https://frame.ai-purplemaple.com/ja/tools/tiktok-safe-zone/) · [Shorts](https://frame.ai-purplemaple.com/ja/tools/youtube-shorts-safe-zone/) | [TikTok](https://frame.ai-purplemaple.com/zh-tw/tools/tiktok-safe-zone/) · [Shorts](https://frame.ai-purplemaple.com/zh-tw/tools/youtube-shorts-safe-zone/) |
-| **Marketplace Batch Resizers** | [Steam](https://frame.ai-purplemaple.com/tools/steam-capsule-resizer/) · [LINE](https://frame.ai-purplemaple.com/tools/line-sticker-resizer/) · [Chrome Store](https://frame.ai-purplemaple.com/tools/chrome-web-store-resizer/) | [LINEスタンプ](https://frame.ai-purplemaple.com/ja/tools/line-sticker-resizer/) · [Steam](https://frame.ai-purplemaple.com/ja/tools/steam-capsule-resizer/) | [LINE 貼圖](https://frame.ai-purplemaple.com/zh-tw/tools/line-sticker-resizer/) · [Steam](https://frame.ai-purplemaple.com/zh-tw/tools/steam-capsule-resizer/) |
-| **YouTube Thumbnail A/B Tester** | [YouTube Thumbnail Tester](https://frame.ai-purplemaple.com/tools/youtube-thumbnail-tester/) | [YouTubeサムネ比較](https://frame.ai-purplemaple.com/ja/tools/youtube-thumbnail-tester/) | [YouTube 縮圖 A/B 預覽](https://frame.ai-purplemaple.com/zh-tw/tools/youtube-thumbnail-tester/) |
-| **Barcode · SVG · AVIF · ICO** | [Barcode](https://frame.ai-purplemaple.com/tools/barcode-generator/) · [SVG→PNG](https://frame.ai-purplemaple.com/tools/svg-to-png-converter/) · [AVIF→PNG](https://frame.ai-purplemaple.com/tools/avif-to-png-converter/) · [ICO](https://frame.ai-purplemaple.com/tools/png-to-ico-converter/) | [バーコード](https://frame.ai-purplemaple.com/ja/tools/barcode-generator/) · [SVG変換](https://frame.ai-purplemaple.com/ja/tools/svg-to-png-converter/) · [AVIF変換](https://frame.ai-purplemaple.com/ja/tools/avif-to-png-converter/) | [條碼產生器](https://frame.ai-purplemaple.com/zh-tw/tools/barcode-generator/) · [SVG 轉 PNG](https://frame.ai-purplemaple.com/zh-tw/tools/svg-to-png-converter/) · [AVIF 轉 PNG](https://frame.ai-purplemaple.com/zh-tw/tools/avif-to-png-converter/) |
+## Quick Start (Zero Dependencies · Node.js 18+)
 
-## Run Automated Spec Verification Locally
+```bash
+# Run directly from GitHub without installing dependencies
+npx github:tbpfs/creator-safe-zone-specs --list
+
+# Validate an entire Steam capsule folder in your game repo
+npx github:tbpfs/creator-safe-zone-specs steam ./store-assets
+
+# Validate LINE stickers (even pixels + true 10px transparent margin check)
+npx github:tbpfs/creator-safe-zone-specs line ./stickers --json
+
+# Validate Chrome Web Store promo images & 128x128 16px-padded icon
+npx github:tbpfs/creator-safe-zone-specs chrome-store ./cws-art
+```
+
+## Use in GitHub Actions CI
+
+```yaml
+- name: Check Steamworks store capsules before release
+  run: npx --yes github:tbpfs/creator-safe-zone-specs steam ./assets/steam
+```
+
+Exits `0` when all assets pass and `1` on any dimension, byte-limit, transparent-margin, or missing-asset failure.
+
+## Run Tests Locally
 
 ```bash
 python3 -W error -m unittest discover -s tests -v
+node --test tests/test_cli.mjs
 ```
 
 ## License
+
 Released under the [MIT License](LICENSE).
