@@ -7,7 +7,15 @@ Zero-dependency Node.js CLI and machine-readable JSON specifications to validate
 - **Chrome Web Store Assets (`chrome-store`)**: Checks promo tiles (`1280×800`, `440×280`, `1400×560`) and verifies the official **16px transparent margin** on the `128×128` store icon.
 - **Discord, Twitch, pixiv/BOOTH & Short-Video Safe Zones**: Validates `discord`, `twitch`, `pixiv-booth`, `youtube-thumb`, `tiktok`, `shorts`, `reels`, `youtube-banner`, and `x-header`.
 
-Specs are auto-exported from the single source of truth backing the browser-local workbench at [SpecFrame Studio](https://frame.ai-purplemaple.com/).
+Specs are auto-exported from the single source of truth backing the browser-local workbench at [SpecFrame Studio](https://frame.ai-purplemaple.com/) (also available in [Japanese](https://frame.ai-purplemaple.com/ja/) & [Traditional Chinese](https://frame.ai-purplemaple.com/zh-tw/)).
+
+## Use as an AI Agent Skill (Claude Code / Codex / Antigravity)
+
+This repository ships an `agentskills.io`-compliant [`SKILL.md`](SKILL.md) so coding and video-generation agents automatically respect 2026 safe-zone coordinates and store rejection checks:
+
+```bash
+npx skills add tbpfs/creator-safe-zone-specs
+```
 
 ## Quick Start (Zero Dependencies · Node.js 18+)
 
