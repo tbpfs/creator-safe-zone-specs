@@ -11,7 +11,7 @@ Use this skill whenever an AI coding, video-editing, or game-release agent gener
 
 - Placing subtitles, captions, hooks, or CTA elements on 9:16 vertical videos (`TikTok`, `YouTube Shorts`, `Instagram Reels`) with FFmpeg, Remotion, or Canvas.
 - Exporting or auditing **Steamworks store/library capsules** (`920×430`, `462×174`, `1232×706`, `748×896`, `600×900`, `3840×1240` no-logo hero).
-- Preparing **LINE Creators Market stickers** (even dimensions `<= 370×320`, RGBA PNG, `<= 1 MB`, true `10px` transparent edge margin).
+- Preparing **LINE Creators Market stickers** (even dimensions `<= 370×320`, RGBA PNG, `<= 1 MB`, true `10px` transparent edge margin — verified against 5 live published packs on the maintainer's [LINE STORE creator page](https://store.line.me/stickershop/author/134212/en)).
 - Preparing **Chrome Web Store**, **Twitch Emote**, **Discord Emoji**, **pixiv/BOOTH**, **YouTube Thumbnail**, **YouTube Banner**, or **X Header** assets.
 
 ## Single Source of Truth Files

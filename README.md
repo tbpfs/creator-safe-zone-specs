@@ -3,7 +3,7 @@
 Zero-dependency Node.js CLI and machine-readable JSON specifications to validate creator & indie-game store assets locally or in CI before upload—catching common rejection traps automatically:
 
 - **Steamworks 6-in-1 Capsules (`steam`)**: Verifies all 6 store/library dimensions (`920×430`, `462×174`, `1232×706`, `748×896`, `600×900`, `3840×1240`), flags missing assets in a folder, and reminds you that `Library Hero (3840×1240)` forbids baked-in logos/text.
-- **LINE Creators Market Stickers (`line`)**: Enforces `<=370×320`, **even width & height**, PNG alpha channel, `<=1 MB`, and decodes actual RGBA scanlines to check the **10px transparent border margin** on all 4 edges.
+- **LINE Creators Market Stickers (`line`)**: Enforces `<=370×320`, **even width & height**, PNG alpha channel, `<=1 MB`, and decodes actual RGBA scanlines to check the **10px transparent border margin** on all 4 edges (battle-tested across 5 published sticker sets on the author's [LINE STORE creator page](https://store.line.me/stickershop/author/134212/en) · [日本語](https://store.line.me/stickershop/author/134212/ja) · [繁體中文](https://store.line.me/stickershop/author/134212/zh-Hant)).
 - **Chrome Web Store Assets (`chrome-store`)**: Checks promo tiles (`1280×800`, `440×280`, `1400×560`) and verifies the official **16px transparent margin** on the `128×128` store icon.
 - **Discord, Twitch, pixiv/BOOTH & Short-Video Safe Zones**: Validates `discord`, `twitch`, `pixiv-booth`, `youtube-thumb`, `tiktok`, `shorts`, `reels`, `youtube-banner`, and `x-header`.
 
